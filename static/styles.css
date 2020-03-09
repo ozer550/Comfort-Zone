@@ -1,0 +1,8 @@
+.main{
+    background-image: url("/static/main.jpg");;
+   
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 29em;
+}
