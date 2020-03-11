@@ -22,7 +22,7 @@
     border: black 1px solid;
 }
 .main1{
-    background-image: url("/static/1.png");;
+    background-image: url("/static/1.png");
    
     background-position: center;
     background-size: cover;
