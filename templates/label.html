@@ -1,16 +1,31 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<div class="form">
-    <form action="/Label" method="post">
-    <div class="mcont">
-    <div class="name">
-    ITEM NAME <input type="text" class="form-control" id="usr" name="itemname">
-</div>
-    </div>
+<div class="main">
     
+</div>
+<div class="container">
+    <div class="center-aligned mt-4 " >
+        <form class="pt-4 " action="/label" method="POST">
+            <div class="form-group form-border p-4">
+                <label for="item-name">Item Name</label>
+                <input class="form-control" type="text" name="item-name" id="item-name"><br>
+                <label for="model-number">Model Number</label>
+                <input class="form-control" type="number" name="model-number" id="model-number"><br>
+                <label for="mrp">M.R.P</label>
+                <input class="form-control" type="number" name="mrp" id="mrp"><br>
+                <label for="offer-price">Offer Price</label>
+                <input class="form-control" type="number" name="offer-price" id="offer-price"><br>
+            </div>
+            <div style="justify-content: flex-end;">
+                <button type="submit" id="redirect_to_label" class="btn btn-primary">Next</button>
+                <button onclick="window.print();" class="btn btn-dark">Print</button>
+            </div>
+            
+            
+        </form>
+
     </div>
-    </form>
 
 </div>
 {% endblock %}

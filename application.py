@@ -9,6 +9,6 @@ app = flask.Flask(__name__)
 def index():
     return flask.render_template("index.html")
 
-@app.route("/Label")
+@app.route("/label")
 def Label():
     return flask.render_template("label.html")
