@@ -6,22 +6,18 @@
     background-repeat: no-repeat;
     height: 29em;
 }
-.btn-success{
-
-    width: 80px;
-    height: 50px;
-    float: right;
-   
-}  
-.btn{
-    margin-right: 8%;
-    margin-top: 2%;
+.center-aligned
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 50%;
 }
-.form{
-    width: 50%;
-    height: 66vh;
-  
-    margin: auto;
-    margin-top: 5%;
+.center-aligned label
+{
+    font-weight: bold;
 }
-
+.form-border
+{
+    border: black 1px solid;
+}
