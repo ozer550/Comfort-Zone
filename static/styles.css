@@ -6,3 +6,22 @@
     background-repeat: no-repeat;
     height: 29em;
 }
+.btn-success{
+
+    width: 80px;
+    height: 50px;
+    float: right;
+   
+}  
+.btn{
+    margin-right: 8%;
+    margin-top: 2%;
+}
+.form{
+    width: 50%;
+    height: 66vh;
+  
+    margin: auto;
+    margin-top: 5%;
+}
+
