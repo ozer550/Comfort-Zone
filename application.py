@@ -17,6 +17,8 @@ migrate = flask_migrate.Migrate(app, db)
 # imports everything from models 
 from models import *
 
+
+
 #routes
 @app.route("/")
 def index():
@@ -33,7 +35,7 @@ def Label():
         model_no=flask.request.form.get("model_no").upper()
         mrp=flask.request.form.get("mrp").upper()
         offerpr=flask.request.form.get("offerpr").upper()
-        print(item_name,model_no,mrp,offerpr)
+       
         new_lb = Tag(item_name=item_name,model_no=model_no,mrp=mrp,offer_pr=offerpr)
         error=""
         if not item_name:
@@ -51,6 +53,12 @@ def Label():
         db.session.add(new_lb)
         db.session.commit()
         return flask.render_template("label.html")
+       
 
 
-
+@app.route("/page",methods=["POST"])
+def page():
+    info=Tag.query.all()
+    print(info)
+    print("hello world")
+    return flask.render_template("error.html",error="what")
