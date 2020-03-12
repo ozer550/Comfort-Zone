@@ -62,3 +62,8 @@ def Label():
 def page():
     info=Tag.query.all()
     return flask.render_template("page.html",info=info)
+
+
+@app.route("/about")
+def about():
+    return flask.render_template("about.html")

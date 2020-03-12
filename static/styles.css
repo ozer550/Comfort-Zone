@@ -8,10 +8,9 @@
 }
 .center-aligned
 {
-    display: flex;
+    display: flexbox;
     justify-content: center;
-    align-items: center;
-    flex: 50%;
+    margin-left: 30%;
 }
 .center-aligned label
 {
@@ -32,6 +31,10 @@
     margin: auto;
     margin-top: 3%;
 }
+.button-right{
+    float : right;
+}
+
 .btn btn-primary{
     margin-left: 30px;
 }
