@@ -29,12 +29,25 @@ def Label():
     if flask.request.method =="GET":
         return flask.render_template("label.html")
     else:
-        item_name=flask.request.form.get("item-name")
-        model_no=flask.request.form.get("model_no")
-        mrp=flask.request.form.get("mrp")
-        offerpr=flask.request.form.get("offerpr")
+        item_name=flask.request.form.get("item-name").upper()
+        model_no=flask.request.form.get("model_no").upper()
+        mrp=flask.request.form.get("mrp").upper()
+        offerpr=flask.request.form.get("offerpr").upper()
         print(item_name,model_no,mrp,offerpr)
         new_lb = Tag(item_name=item_name,model_no=model_no,mrp=mrp,offer_pr=offerpr)
+        error=""
+        if not item_name:
+            error="ITEM NAME"
+            return flask.render_template("error.html",error=error)
+        if not model_no:
+            error="MODEL NUMBER"
+            return flask.render_template("error.html",error=error)
+        if not mrp:
+            error="MRP"
+            return flask.render_template("error.html",error=error)
+        if not offerpr:
+            error="OFFER PRICE"
+            return flask.render_template("error.html",error=error)
         db.session.add(new_lb)
         db.session.commit()
         return flask.render_template("label.html")
