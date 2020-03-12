@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 25px;
+            
+            padding-left: 120px;
+
+        }
+
+        img {
+            width: 60%;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    {% for infor in info%}
+    <div class="label">
+        <img src="/static/1.png">
+        <div id="info">
+
+            <table class="table">
+
+                <tbody>
+
+                    <tr>
+                        <td scope="row">ITEM NAME:</td>
+                        <td>:</td>
+                        <td>{{infor.item_name}}</td>
+
+                    </tr>
+                    <tr>
+                        <td scope="row">MODEL NO:</th>
+                        <td>:</td>
+                        <td>{{infor.model_no}}</td>
+
+                    </tr>
+                    <tr>
+                        <td scope="row"> MRP:</th>
+                        <td>:</td>
+                        <td>{{infor.mrp}}/-</td>
+
+                    </tr>
+                    <tr>
+                        <td scope="row"> OFFER PRICE</th>
+                        <td>:</td>
+                        <td>{{infor.offer_pr}}</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+
+
+</body>
+
+</html>

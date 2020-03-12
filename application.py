@@ -29,8 +29,10 @@ def index():
 @app.route("/label",methods=["POST","GET"])
 def Label():
     if flask.request.method =="GET":
-        return flask.render_template("label.html")
+        flag=0
+        return flask.render_template("label.html",flag=flag)
     else:
+        flag=1
         item_name=flask.request.form.get("item-name").upper()
         model_no=flask.request.form.get("model_no").upper()
         mrp=flask.request.form.get("mrp").upper()
@@ -52,13 +54,11 @@ def Label():
             return flask.render_template("error.html",error=error)
         db.session.add(new_lb)
         db.session.commit()
-        return flask.render_template("label.html")
+        return flask.render_template("label.html",flag=flag)
        
 
 
-@app.route("/page",methods=["POST"])
+@app.route("/page")
 def page():
     info=Tag.query.all()
-    print(info)
-    print("hello world")
-    return flask.render_template("error.html",error="what")
+    return flask.render_template("page.html",info=info)
